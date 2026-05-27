@@ -1,0 +1,304 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: rgba(240, 240, 240, 0.9);
+
+    background-image: url('https://picsum.photos/1200/800');
+
+    background-size: cover;
+
+    color: #222;
+
+    line-height: 1.6;
+
+    padding: 20px;
+
+}
+
+.nav-menu {
+
+    list-style-type: none;
+
+    list-style-position: inside;
+
+    display: flex;
+
+    gap: 20px;
+
+    background-color: #333;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.nav-menu li {
+
+    padding: 5px 10px;
+
+}
+
+a:link {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    color: yellow;
+
+}
+
+a:active {
+
+    color: red;
+
+}
+
+a:visited {
+
+    color: lightgray;
+
+}
+
+#mainHeader {
+
+    background: linear-gradient(to right,
+            #007BFF,
+            #00C6FF);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+}
+
+.eventCard {
+
+    border: 2px solid black;
+
+    padding: 20px;
+
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+h2 {
+
+    color: #007BFF;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+h3,
+p {
+
+    text-align: justify;
+
+}
+
+.highlight {
+
+    background-color: yellow;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    background-color: white;
+
+}
+
+th,
+td {
+
+    border: 1px solid black;
+
+    padding: 10px;
+
+}
+
+tr:nth-child(even) {
+
+    background-color: #f2f2f2;
+
+}
+
+.gallery-img {
+
+    width: 200px;
+
+    height: 150px;
+
+    border: 3px solid #333;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+
+}
+
+.gallery-img:hover {
+
+    transform: scale(1.05);
+
+}
+
+form {
+
+    background-color: white;
+
+    padding: 20px;
+
+    margin-top: 20px;
+
+    border-radius: 10px;
+
+}
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin: 10px 0;
+
+    border: 1px solid gray;
+
+    border-radius: 5px;
+
+}
+
+input:focus,
+textarea:focus {
+
+    outline: 3px solid orange;
+
+}
+
+button {
+
+    background-color: #007BFF;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+.news-section p {
+
+    column-count: 2;
+
+    column-gap: 30px;
+
+    column-rule: 1px solid gray;
+
+}
+
+.hidden-box {
+
+    visibility: hidden;
+
+}
+
+.none-box {
+
+    display: none;
+
+}
+
+footer {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    background-color: #333;
+
+    color: white;
+
+    padding: 15px;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav-menu {
+
+        flex-direction: column;
+
+    }
+
+    body {
+
+        font-size: 14px;
+
+    }
+
+    .gallery-img {
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+    #mainHeader {
+
+        padding: 15px;
+
+    }
+
+}

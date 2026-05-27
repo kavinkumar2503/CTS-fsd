@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <ul class="nav-menu">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#events">Events</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="help.html" target="_blank">
+                    Help
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <header id="mainHeader">
+
+        <h1 style="color:red;">
+            Local Community Event Portal
+        </h1>
+
+    </header>
+
+    <div id="welcomeBanner">
+
+        Welcome to Our Community Portal!
+
+        <span style="color:yellow; font-weight:bold;">
+            Special Offer: Free Registration Today!
+        </span>
+
+    </div>
+
+    <main id="home">
+
+        <section class="eventCard">
+
+            <h2>Upcoming Events</h2>
+
+            <p class="highlight">
+
+                Participate in exciting activities organized by the city council.
+
+            </p>
+
+        </section>
+
+        <section id="gallery">
+
+            <h2>Community Event Gallery</h2>
+
+            <table>
+
+                <caption>
+                    Past Community Events
+                </caption>
+
+                <tr>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?1"
+                            alt="Music Event"
+                            title="Music Event"
+                            class="gallery-img">
+
+                        <p>Music Festival</p>
+
+                    </td>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?2"
+                            alt="Food Festival"
+                            title="Food Festival"
+                            class="gallery-img">
+
+                        <p>Food Festival</p>
+
+                    </td>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?3"
+                            alt="Sports Event"
+                            title="Sports Event"
+                            class="gallery-img">
+
+                        <p>Sports Meet</p>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?4"
+                            alt="Workshop"
+                            title="Workshop"
+                            class="gallery-img">
+
+                        <p>Workshop</p>
+
+                    </td>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?5"
+                            alt="Dance Show"
+                            title="Dance Show"
+                            class="gallery-img">
+
+                        <p>Dance Show</p>
+
+                    </td>
+
+                    <td>
+
+                        <img src="https://picsum.photos/200/150?6"
+                            alt="Art Event"
+                            title="Art Event"
+                            class="gallery-img">
+
+                        <p>Art Exhibition</p>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+        <section id="events">
+
+            <h2>Event Registration Form</h2>
+
+            <form id="eventForm">
+
+                <input type="text"
+                    placeholder="Enter your name"
+                    required
+                    autofocus>
+
+                <input type="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <input type="date"
+                    required>
+
+                <input type="text"
+                    id="phone"
+                    placeholder="Enter phone number"
+                    onblur="validatePhone()">
+
+                <select id="eventType"
+                    onchange="showFee()">
+
+                    <option value="">
+                        Select Event
+                    </option>
+
+                    <option value="Music">
+                        Music Event
+                    </option>
+
+                    <option value="Sports">
+                        Sports Event
+                    </option>
+
+                    <option value="Workshop">
+                        Workshop
+                    </option>
+
+                </select>
+
+                <p id="feeDisplay"></p>
+
+                <textarea id="feedback"
+                    placeholder="Enter your feedback"
+                    onkeyup="countCharacters()"></textarea>
+
+                <p>
+                    Character Count:
+                    <span id="charCount">0</span>
+                </p>
+
+                <button type="button"
+                    onclick="submitForm()">
+
+                    Register
+
+                </button>
+
+                <output id="confirmation"></output>
+
+            </form>
+
+        </section>
+
+        <section>
+
+            <h2>Event Promo Video</h2>
+
+            <video width="500"
+                controls
+                oncanplay="videoReady()">
+
+                <source src="sample.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <p id="videoMessage"></p>
+
+        </section>
+
+        <section class="news-section">
+
+            <h2>Community Bulletin</h2>
+
+            <p>
+
+                The city council regularly organizes awareness programs,
+                workshops, cultural activities, food festivals, sports
+                events, and volunteer programs. Residents are encouraged
+                to participate actively and contribute to community
+                development activities.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Find Nearby Events</h2>
+
+            <button onclick="findLocation()">
+
+                Find Nearby Events
+
+            </button>
+
+            <p id="location"></p>
+
+        </section>
+
+        <section>
+
+            <button onclick="clearStorage()">
+
+                Clear Preferences
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer id="contact">
+
+        <p>
+
+            © 2026 Local Community Event Portal
+
+        </p>
+
+    </footer>
+
+    <script>
+
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if (phone.length < 10) {
+
+                alert("Invalid Phone Number");
+
+            }
+
+        }
+
+        function showFee() {
+
+            let event =
+                document.getElementById("eventType").value;
+
+            let fee = "";
+
+            if (event === "Music") {
+
+                fee = "Fee: ₹500";
+
+            }
+
+            else if (event === "Sports") {
+
+                fee = "Fee: ₹300";
+
+            }
+
+            else if (event === "Workshop") {
+
+                fee = "Fee: ₹700";
+
+            }
+
+            document.getElementById("feeDisplay").innerHTML = fee;
+
+            localStorage.setItem("preferredEvent", event);
+
+        }
+
+        function submitForm() {
+
+            document.getElementById("confirmation").innerHTML =
+                "Registration Successful!";
+
+        }
+
+        let images =
+            document.querySelectorAll(".gallery-img");
+
+        images.forEach(function (img) {
+
+            img.ondblclick = function () {
+
+                this.style.width = "400px";
+
+            }
+
+        });
+
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("charCount").innerHTML =
+                text.length;
+
+        }
+
+        function videoReady() {
+
+            document.getElementById("videoMessage").innerHTML =
+                "Video Ready to Play";
+
+        }
+
+        window.onbeforeunload = function () {
+
+            return "Form not submitted!";
+
+        }
+
+        window.onload = function () {
+
+            let saved =
+                localStorage.getItem("preferredEvent");
+
+            if (saved) {
+
+                document.getElementById("eventType").value =
+                    saved;
+
+            }
+
+        }
+
+        function clearStorage() {
+
+            localStorage.clear();
+
+            sessionStorage.clear();
+
+            alert("Storage Cleared");
+
+        }
+
+        function findLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    function (position) {
+
+                        document.getElementById("location").innerHTML =
+
+                            "Latitude: "
+                            + position.coords.latitude
+                            + "<br>Longitude: "
+                            + position.coords.longitude;
+
+                    },
+
+                    function () {
+
+                        alert("Unable to fetch location");
+
+                    },
+
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000
+                    }
+
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
